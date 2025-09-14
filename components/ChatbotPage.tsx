@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 import { CHATBOT_API_BASE } from '../constants';
 
 interface Message {
@@ -106,7 +107,13 @@ const ChatbotPage: React.FC = () => {
                 {msg.role === 'user' ? 'You' : 'Biomedical Tutor'}
                 {msg.mode && <span className="text-xs ml-2 text-gray-500">Mode: {msg.mode}</span>}
               </div>
-              <div className="whitespace-pre-wrap">{msg.content}</div>
+              {msg.role === 'user' ? (
+                <div className="whitespace-pre-wrap">{msg.content}</div>
+              ) : (
+                <div className="prose prose-sm max-w-none">
+                  <ReactMarkdown>{msg.content}</ReactMarkdown>
+                </div>
+              )}
             </div>
           ))
         )}

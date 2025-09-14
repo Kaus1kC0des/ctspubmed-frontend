@@ -1,0 +1,94 @@
+/* Basic markdown styling */
+.prose {
+  color: #374151;
+  line-height: 1.6;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: #1f2937;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.prose h1 { font-size: 1.5em; }
+.prose h2 { font-size: 1.25em; }
+.prose h3 { font-size: 1.125em; }
+
+.prose p {
+  margin-bottom: 1em;
+}
+
+.prose strong, .prose b {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.prose em, .prose i {
+  font-style: italic;
+}
+
+.prose ul, .prose ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.prose li {
+  margin-bottom: 0.25em;
+}
+
+.prose code {
+  background-color: #f3f4f6;
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background-color: #f3f4f6;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left: 4px solid #d1d5db;
+  padding-left: 1em;
+  margin-left: 0;
+  margin-bottom: 1em;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.prose a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #2563eb;
+}
+
+/* Smaller prose for sidebar */
+.prose-sm {
+  font-size: 0.875em;
+}
+
+.prose-sm h1 { font-size: 1.25em; }
+.prose-sm h2 { font-size: 1.125em; }
+.prose-sm h3 { font-size: 1em; }
+
+.prose-xs {
+  font-size: 0.75em;
+}
+
+.prose-xs h1 { font-size: 1em; }
+.prose-xs h2 { font-size: 0.875em; }
+.prose-xs h3 { font-size: 0.75em; }

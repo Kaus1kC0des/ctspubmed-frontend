@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 import { CHATBOT_API_BASE } from '../constants';
 
 interface Message {
@@ -155,7 +156,13 @@ const ChatbotSidebar: React.FC<ChatbotSidebarProps> = ({ isOpen, onClose }) => {
                 <div className="text-xs font-medium mb-1 opacity-70">
                   {msg.role === 'user' ? 'You' : 'Assistant'}
                 </div>
-                <div className="text-sm whitespace-pre-wrap">{msg.content}</div>
+                {msg.role === 'user' ? (
+                  <div className="text-sm whitespace-pre-wrap">{msg.content}</div>
+                ) : (
+                  <div className="text-sm prose prose-xs max-w-none">
+                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  </div>
+                )}
               </div>
             </div>
           ))
