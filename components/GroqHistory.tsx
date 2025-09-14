@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { GROQ_API_BASE } from '../constants';
 
 interface SemanticItem {
   query: string;
@@ -18,7 +19,7 @@ const GroqHistory: React.FC = () => {
       setError('');
       try {
         const token = localStorage.getItem('jwt_token');
-        const res = await fetch('http://127.0.0.1:8001/cache/semantic', {
+        const res = await fetch(`${GROQ_API_BASE}/cache/semantic`, {
           headers: token ? { 'Authorization': `Bearer ${token}` } : {}
         });
         if (!res.ok) throw new Error(`Failed to load (${res.status})`);

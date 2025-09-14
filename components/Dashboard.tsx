@@ -6,6 +6,7 @@ import {
 import { FileText, Star, Flame, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAuthHeader } from "../utils/auth";
+import { ADVANCED_API_BASE } from "../constants";
 
 const COLORS = ["#3b82f6", "#10b981", "#f59e0b", "#8b5cf6"];
 
@@ -22,7 +23,7 @@ const Dashboard = () => {
         // Fetch profile
         
         // Fetch chat history
-        const histRes = await fetch("http://127.0.0.1:8000/history", {
+        const histRes = await fetch(`${ADVANCED_API_BASE}/history`, {
           headers: getAuthHeader(),
         });
         const histData = await histRes.json();

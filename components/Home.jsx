@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { ADVANCED_API_BASE } from '../constants';
 
 function Home() {
   const [recentPapers, setRecentPapers] = useState([]);
@@ -11,7 +12,7 @@ function Home() {
       try {
         const token = localStorage.getItem('jwt_token');
         const res = await fetch(
-          `http://127.0.0.1:8000/search/advanced`,
+          `${ADVANCED_API_BASE}/search/advanced`,
           {
             method: 'POST',
             headers: {

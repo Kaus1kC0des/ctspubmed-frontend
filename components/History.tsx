@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ResultsList from './ResultsList';
+import { ADVANCED_API_BASE } from '../constants';
 
 interface CachedItem {
   query: string;
@@ -19,7 +20,7 @@ const History: React.FC = () => {
       setError('');
       try {
         const token = localStorage.getItem('jwt_token');
-        const res = await fetch('http://127.0.0.1:8000/cache/advanced', {
+        const res = await fetch(`${ADVANCED_API_BASE}/cache/advanced`, {
           headers: token ? { 'Authorization': `Bearer ${token}` } : {}
         });
         if (!res.ok) throw new Error(`Failed to load (${res.status})`);

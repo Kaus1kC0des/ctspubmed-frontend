@@ -17,6 +17,8 @@ export const PUBLICATION_TYPES = [
   "Clinical Trial",
 ];
 
-export const ADVANCED_API_BASE = 'http://127.0.0.1:8000';
-export const CHATBOT_API_BASE = 'http://127.0.0.1:8000';
-export const GROQ_API_BASE = 'http://127.0.0.1:8000'; // unified server
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://127.0.0.1:8000';
+
+export const ADVANCED_API_BASE = BACKEND_URL;
+export const CHATBOT_API_BASE = BACKEND_URL;
+export const GROQ_API_BASE = BACKEND_URL; // unified server
